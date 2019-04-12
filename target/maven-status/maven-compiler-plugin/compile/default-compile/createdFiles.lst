@@ -1,0 +1,6 @@
+org/greenwin/VLtopics/repositories/TopicRepository.class
+org/greenwin/VLtopics/controllers/TopicController.class
+org/greenwin/VLtopics/VlTopicsApplication.class
+org/greenwin/VLtopics/entities/Topic.class
+org/greenwin/VLtopics/beans/AppRole.class
+org/greenwin/VLtopics/beans/AppUser.class
