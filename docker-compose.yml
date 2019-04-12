@@ -1,0 +1,7 @@
+version: '2'
+services:
+  topics:
+    container_name: topics
+    image: jaycecordon/vltopics:0.0.1-SNAPSHOT
+    ports:
+      - "8641:8641"
