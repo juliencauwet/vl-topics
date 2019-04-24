@@ -32,4 +32,9 @@ public class TopicController {
     public Topic saveTopic(@RequestBody Topic topic){
         return topicRepository.save(topic);
     }
+
+    @GetMapping("/{keyword}")
+    public List<Topic> getTopicsByKeyWord(@PathVariable("keyword") String keyword){
+        return topicRepository.getTopicsBySummaryContainingIgnoreCase(keyword);
+    }
 }

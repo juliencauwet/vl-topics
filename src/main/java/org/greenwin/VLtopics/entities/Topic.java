@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
@@ -20,8 +19,10 @@ public class Topic {
     private String title;
     private String summary;
     private Date dateOfCreation;
-
-
+    
     private int authorId;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "topic")
+    private List<Vote> votes;
 
 }
