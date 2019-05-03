@@ -1,15 +1,15 @@
 package org.greenwin.VLtopics.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Data @AllArgsConstructor @NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor @NoArgsConstructor
 public class Topic {
 
     @Id
@@ -19,10 +19,10 @@ public class Topic {
     private String title;
     private String summary;
     private Date dateOfCreation;
+
+    @OneToOne(mappedBy = "topic")
+    private History history;
     
     private int authorId;
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "topic")
-    private List<Vote> votes;
 
 }

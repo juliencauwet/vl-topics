@@ -11,6 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
+import java.time.LocalDate;
+
 @SpringBootApplication
 @EnableFeignClients("org.greenwin")
 @EnableDiscoveryClient
@@ -39,6 +41,7 @@ public class VlTopicsApplication implements CommandLineRunner {
 
 		topicRepository.save(topic1);
 		topicRepository.save(topic2);
+
 
 	}
 }

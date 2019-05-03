@@ -1,6 +1,7 @@
 package org.greenwin.VLtopics.controllers;
 
 import org.greenwin.VLtopics.entities.Topic;
+import org.greenwin.VLtopics.proxies.UserProxy;
 import org.greenwin.VLtopics.repositories.TopicRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,12 +19,19 @@ public class TopicController {
     @Autowired
     private TopicRepository topicRepository;
 
+    @Autowired
+    private UserProxy proxy;
+
     @GetMapping("/")
     public List<Topic> getTopics(){
-        return topicRepository.findAll();
+        List<Topic> topics = topicRepository.findAll();
+        for (Topic topic : topics){
+
+        }
+        return topics;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public Topic getTopicById(@PathVariable("id") int id){
         return topicRepository.getById(id);
     }
